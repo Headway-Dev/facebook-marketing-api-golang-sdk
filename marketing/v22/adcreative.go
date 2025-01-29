@@ -149,7 +149,7 @@ var Adcreativefields = []string{
 	"effective_object_story_id",
 	"image_hash",
 	"image_url",
-	"instagram_actor_id",
+	"instagram_user_id",
 	"instagram_permalink_url",
 	"instagram_story_id",
 	"link_og_id",
@@ -190,7 +190,7 @@ type AdCreative struct {
 	// A URL for the image for this creative. We save the image at this URL to the ad account's image library. If provided do not include image_hash.
 	ImageURL string `json:"image_url,omitempty"`
 	// Instagram actor ID
-	InstagramActorID string `json:"instagram_actor_id,omitempty"`
+	InstagramActorID string `json:"instagram_user_id,omitempty"`
 	// Instagram permalink
 	InstagramPermalinkURL string `json:"instagram_permalink_url,omitempty"`
 	// The ID of an Instagram post for creating ads.
