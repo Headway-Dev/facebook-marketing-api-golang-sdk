@@ -169,6 +169,6 @@ type Campaign struct {
 	StopTime                 fb.Time         `json:"stop_time,omitempty"`
 	UpdatedTime              fb.Time         `json:"updated_time,omitempty"`
 	SpecialAdCategories      []string        `json:"special_ad_categories,omitempty"`
-	IsSKAdNetworkAttribution bool            `json:"is_skadnetwork_attribution,omitempty"`
+	IsSKAdNetworkAttribution *bool           `json:"is_skadnetwork_attribution,omitempty"`
 	PromotedObject           *PromotedObject `json:"promoted_object,omitempty"`
 }
