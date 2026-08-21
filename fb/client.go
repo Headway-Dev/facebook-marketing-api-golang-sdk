@@ -27,7 +27,9 @@ type Client struct {
 	*http.Client
 }
 
-// NewClient returns a http.Client containing a special transport with injects the version, token, and clientkey.
+// NewClient returns a http.Client containing a special transport that injects the access token and, if
+// clientKey is non-empty, an appsecret_proof computed from it. Pass an empty clientKey to opt out of the
+// appsecret_proof entirely.
 func NewClient(l log.Logger, token, clientKey string) *Client {
 	if l == nil {
 		l = log.NewNopLogger()

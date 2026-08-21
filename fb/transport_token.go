@@ -34,7 +34,9 @@ func (t *tokenTransport) RoundTrip(r *http.Request) (*http.Response, error) {
 	}
 	q := u.Query()
 	q.Set("access_token", t.getAccessToken(ctx))
-	q.Set("appsecret_proof", t.getAppSecretProof(ctx))
+	if t.clientKey != "" {
+		q.Set("appsecret_proof", t.getAppSecretProof(ctx))
+	}
 	u.RawQuery = q.Encode()
 
 	rNew := *r
